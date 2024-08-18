@@ -1,0 +1,74 @@
+@font-face {
+  font-family: myQuranFont;
+  src: url("../font/_PDMS_Saleem_QuranFont.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f8fa;
+}
+
+.text-quran {
+  font-family: "myQuranFont" !important;
+  word-spacing: 4px;
+  line-height: 1.4;
+}
+
+.main-card {
+  width: 68%;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.circle-button {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s linear;
+}
+
+.circle-button:hover {
+  opacity: 0.9;
+}
+
+.audio-button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -36%);
+}
+
+.refresh-button {
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+}
+
+.back-button {
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-card {
+    width: 100%;
+  }
+
+  .refresh-button {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .back-button {
+    right: 20px;
+    bottom: 20px;
+  }
+}
