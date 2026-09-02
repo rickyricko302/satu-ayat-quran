@@ -1,0 +1,733 @@
+/* ==========================================================================
+   SATU AYAT QURAN v2 - "ABSOLUTE CINEMA" DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  --cq-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --cq-font-arabic: 'Amiri Quran', 'Scheherazade New', 'myQuranFont', serif;
+  --cq-font-serif: 'Cinzel', serif;
+  
+  --cq-transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --cq-transition-normal: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --cq-transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  --cq-transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --------------------------------------------------------------------------
+   THEME: NOCTURNE EMERALD (Default)
+   -------------------------------------------------------------------------- */
+[data-v2-theme="emerald"] {
+  --cq-bg: #04100c;
+  --cq-bg-gradient: radial-gradient(circle at 50% -20%, #0d3829 0%, #04120e 45%, #020806 100%);
+  --cq-card-bg: rgba(7, 26, 19, 0.72);
+  --cq-card-bg-solid: #082119;
+  --cq-card-border: rgba(52, 211, 153, 0.16);
+  --cq-card-border-hover: rgba(229, 193, 88, 0.4);
+  --cq-card-glow: rgba(16, 185, 129, 0.12);
+  
+  --cq-text-main: #f0fdf4;
+  --cq-text-muted: #94a3b8;
+  --cq-text-dim: #64748b;
+  --cq-text-arabic: #fef08a;
+  
+  --cq-accent-gold: #f59e0b;
+  --cq-accent-gold-glow: rgba(245, 158, 11, 0.3);
+  --cq-accent-emerald: #10b981;
+  --cq-accent-emerald-light: #34d399;
+  --cq-accent-emerald-glow: rgba(16, 185, 129, 0.35);
+  
+  --cq-surface-elevated: rgba(15, 47, 36, 0.85);
+  --cq-surface-hover: rgba(20, 60, 46, 0.9);
+  --cq-border-light: rgba(255, 255, 255, 0.08);
+  
+  --cq-audio-wave: #34d399;
+  --cq-audio-wave-gold: #fbbf24;
+}
+
+/* --------------------------------------------------------------------------
+   THEME: CELESTIAL VELVET (Cosmic Indigo & Astral Gold)
+   -------------------------------------------------------------------------- */
+[data-v2-theme="celestial"] {
+  --cq-bg: #070a12;
+  --cq-bg-gradient: radial-gradient(circle at 50% -20%, #172554 0%, #090e1b 50%, #03060c 100%);
+  --cq-card-bg: rgba(15, 23, 42, 0.75);
+  --cq-card-bg-solid: #0f172a;
+  --cq-card-border: rgba(96, 165, 250, 0.18);
+  --cq-card-border-hover: rgba(251, 191, 36, 0.45);
+  --cq-card-glow: rgba(56, 189, 248, 0.15);
+  
+  --cq-text-main: #f8fafc;
+  --cq-text-muted: #94a3b8;
+  --cq-text-dim: #475569;
+  --cq-text-arabic: #fed7aa;
+  
+  --cq-accent-gold: #fbbf24;
+  --cq-accent-gold-glow: rgba(251, 191, 36, 0.35);
+  --cq-accent-emerald: #38bdf8;
+  --cq-accent-emerald-light: #7dd3fc;
+  --cq-accent-emerald-glow: rgba(56, 189, 248, 0.35);
+  
+  --cq-surface-elevated: rgba(30, 41, 59, 0.85);
+  --cq-surface-hover: rgba(51, 65, 85, 0.9);
+  --cq-border-light: rgba(255, 255, 255, 0.08);
+  
+  --cq-audio-wave: #38bdf8;
+  --cq-audio-wave-gold: #fbbf24;
+}
+
+/* --------------------------------------------------------------------------
+   THEME: IMPERIAL ALABASTER (Warm Ethereal Parchment & Deep Emerald)
+   -------------------------------------------------------------------------- */
+[data-v2-theme="alabaster"] {
+  --cq-bg: #f7f4ec;
+  --cq-bg-gradient: radial-gradient(circle at 50% -20%, #eae2d0 0%, #f7f4ec 50%, #f0ebd9 100%);
+  --cq-card-bg: rgba(255, 255, 255, 0.85);
+  --cq-card-bg-solid: #ffffff;
+  --cq-card-border: rgba(180, 131, 44, 0.25);
+  --cq-card-border-hover: rgba(16, 110, 78, 0.5);
+  --cq-card-glow: rgba(180, 131, 44, 0.12);
+  
+  --cq-text-main: #1c1917;
+  --cq-text-muted: #57534e;
+  --cq-text-dim: #78716c;
+  --cq-text-arabic: #064e3b;
+  
+  --cq-accent-gold: #b4832c;
+  --cq-accent-gold-glow: rgba(180, 131, 44, 0.25);
+  --cq-accent-emerald: #0f766e;
+  --cq-accent-emerald-light: #14b8a6;
+  --cq-accent-emerald-glow: rgba(15, 118, 110, 0.25);
+  
+  --cq-surface-elevated: rgba(245, 240, 230, 0.9);
+  --cq-surface-hover: rgba(235, 227, 212, 0.95);
+  --cq-border-light: rgba(0, 0, 0, 0.08);
+  
+  --cq-audio-wave: #0f766e;
+  --cq-audio-wave-gold: #b4832c;
+}
+
+/* --------------------------------------------------------------------------
+   BASE & RESET
+   -------------------------------------------------------------------------- */
+.cinema-app-root {
+  font-family: var(--cq-font-sans);
+  background: var(--cq-bg-gradient);
+  background-color: var(--cq-bg);
+  color: var(--cq-text-main);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background-color var(--cq-transition-slow), color var(--cq-transition-slow);
+}
+
+.cinema-app-root * {
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   SACRED GEOMETRY & ATMOSPHERIC PARTICLES BACKGROUND
+   -------------------------------------------------------------------------- */
+.cinema-atmosphere {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cinema-atmosphere-orb-1 {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--cq-accent-emerald-glow) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: floatOrb 18s ease-in-out infinite alternate;
+  opacity: 0.6;
+}
+
+.cinema-atmosphere-orb-2 {
+  position: absolute;
+  bottom: 5%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--cq-accent-gold-glow) 0%, transparent 70%);
+  filter: blur(90px);
+  animation: floatOrb2 22s ease-in-out infinite alternate;
+  opacity: 0.45;
+}
+
+.cinema-atmosphere-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px;
+  background-position: 0 0, 16px 16px;
+  opacity: 0.5;
+}
+
+[data-v2-theme="alabaster"] .cinema-atmosphere-grid {
+  background-image: 
+    radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(-50%, 0) scale(1); }
+  50% { transform: translate(-45%, 40px) scale(1.1); }
+  100% { transform: translate(-55%, -20px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -40px) scale(1.15); }
+  100% { transform: translate(20px, 30px) scale(0.9); }
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.font-arabic {
+  font-family: var(--cq-font-arabic);
+  direction: rtl;
+  text-align: right;
+  line-height: 2.1;
+  word-spacing: 5px;
+}
+
+.font-serif-cinematic {
+  font-family: var(--cq-font-serif);
+  letter-spacing: 0.05em;
+}
+
+.arabic-scaler-sm { font-size: 1.75rem; line-height: 2; }
+.arabic-scaler-md { font-size: 2.25rem; line-height: 2.2; }
+.arabic-scaler-lg { font-size: 2.85rem; line-height: 2.3; }
+.arabic-scaler-xl { font-size: 3.5rem; line-height: 2.4; }
+
+@media (max-width: 768px) {
+  .arabic-scaler-sm { font-size: 1.45rem; line-height: 1.9; }
+  .arabic-scaler-md { font-size: 1.75rem; line-height: 2.1; }
+  .arabic-scaler-lg { font-size: 2.2rem; line-height: 2.2; }
+  .arabic-scaler-xl { font-size: 2.6rem; line-height: 2.3; }
+}
+
+/* --------------------------------------------------------------------------
+   GLASS CARDS & CONTAINERS
+   -------------------------------------------------------------------------- */
+.cinema-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cinema-card {
+  background: var(--cq-card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--cq-card-border);
+  border-radius: 1.75rem;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.45),
+    0 0 0 1px var(--cq-border-light),
+    0 0 30px 0 var(--cq-card-glow);
+  transition: all var(--cq-transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.cinema-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--cq-accent-emerald-light) 25%, 
+    var(--cq-accent-gold) 50%, 
+    var(--cq-accent-emerald-light) 75%, 
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+.cinema-card:hover {
+  border-color: var(--cq-card-border-hover);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.55),
+    0 0 45px 0 var(--cq-card-glow);
+}
+
+/* --------------------------------------------------------------------------
+   HEADER & NAVBAR
+   -------------------------------------------------------------------------- */
+.cinema-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(4, 16, 12, 0.65);
+  border-bottom: 1px solid var(--cq-border-light);
+  transition: all var(--cq-transition-normal);
+}
+
+[data-v2-theme="celestial"] .cinema-header {
+  background: rgba(7, 10, 18, 0.7);
+}
+
+[data-v2-theme="alabaster"] .cinema-header {
+  background: rgba(247, 244, 236, 0.85);
+}
+
+.cinema-badge-gold {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(229, 193, 88, 0.05) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--cq-accent-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cinema-badge-emerald {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(52, 211, 153, 0.05) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: var(--cq-accent-emerald-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   BUTTONS & INTERACTIVE CONTROLS
+   -------------------------------------------------------------------------- */
+.cinema-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--cq-transition-fast);
+  text-decoration: none;
+  user-select: none;
+}
+
+.cinema-btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.35);
+}
+
+.cinema-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: #ffffff;
+}
+
+.cinema-btn-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.35);
+}
+
+.cinema-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(245, 158, 11, 0.5);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #ffffff;
+}
+
+.cinema-btn-glass {
+  background: var(--cq-surface-elevated);
+  color: var(--cq-text-main);
+  border: 1px solid var(--cq-border-light);
+  backdrop-filter: blur(10px);
+}
+
+.cinema-btn-glass:hover {
+  background: var(--cq-surface-hover);
+  border-color: var(--cq-card-border-hover);
+  color: var(--cq-text-main);
+  transform: translateY(-1px);
+}
+
+.cinema-btn-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   AUDIO WAVEFORM & PLAYER
+   -------------------------------------------------------------------------- */
+.cinema-wave-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 28px;
+}
+
+.cinema-wave-bar {
+  width: 3.5px;
+  background: var(--cq-audio-wave);
+  border-radius: 9999px;
+  transition: height 0.15s ease;
+  height: 6px;
+}
+
+.cinema-wave-bar.playing {
+  animation: wavePulse 1.2s ease-in-out infinite alternate;
+}
+
+.cinema-wave-bar:nth-child(1) { animation-delay: 0.1s; }
+.cinema-wave-bar:nth-child(2) { animation-delay: 0.4s; }
+.cinema-wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.cinema-wave-bar:nth-child(4) { animation-delay: 0.6s; }
+.cinema-wave-bar:nth-child(5) { animation-delay: 0.3s; }
+.cinema-wave-bar:nth-child(6) { animation-delay: 0.5s; }
+.cinema-wave-bar:nth-child(7) { animation-delay: 0.25s; }
+.cinema-wave-bar:nth-child(8) { animation-delay: 0.45s; }
+
+@keyframes wavePulse {
+  0% { height: 6px; opacity: 0.4; }
+  50% { height: 26px; opacity: 1; }
+  100% { height: 10px; opacity: 0.7; }
+}
+
+/* Audio Player Floating Dock */
+.cinema-audio-dock {
+  background: var(--cq-card-bg-solid);
+  border: 1px solid var(--cq-card-border);
+  border-radius: 1.25rem;
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cinema-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  transition: background var(--cq-transition-fast);
+}
+
+[data-v2-theme="alabaster"] .cinema-scrubber {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.cinema-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cq-accent-gold);
+  box-shadow: 0 0 8px var(--cq-accent-gold-glow);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.cinema-scrubber::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+/* --------------------------------------------------------------------------
+   DIVIDERS & ORNAMENTS
+   -------------------------------------------------------------------------- */
+.cinema-ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--cq-accent-gold);
+  opacity: 0.65;
+}
+
+.cinema-ornament-divider::before,
+.cinema-ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cq-accent-gold), transparent);
+}
+
+/* --------------------------------------------------------------------------
+   FLOATING ACTION BUTTONS (REFRESH / SHORTCUTS)
+   -------------------------------------------------------------------------- */
+.cinema-fab-container {
+  position: fixed;
+  right: 1.75rem;
+  bottom: 1.75rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.cinema-fab-main {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cq-accent-emerald) 0%, #059669 100%);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px 0 rgba(16, 185, 129, 0.45), 0 0 0 0 rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--cq-transition-spring);
+}
+
+.cinema-fab-main:hover {
+  transform: scale(1.08) rotate(45deg);
+  box-shadow: 0 12px 30px 0 rgba(16, 185, 129, 0.6);
+}
+
+.cinema-fab-main:active {
+  transform: scale(0.95);
+}
+
+.cinema-fab-main.spinning {
+  animation: spinFab 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes spinFab {
+  0% { transform: rotate(0deg) scale(0.95); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   MODALS & DRAWERS
+   -------------------------------------------------------------------------- */
+.cinema-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.cinema-modal-content {
+  background: var(--cq-card-bg-solid);
+  border: 1px solid var(--cq-card-border);
+  border-radius: 1.5rem;
+  max-width: 650px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  padding: 1.75rem;
+}
+
+.cinema-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  background: var(--cq-card-bg-solid);
+  border-left: 1px solid var(--cq-card-border);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* --------------------------------------------------------------------------
+   SHIMMER SKELETON LOADER
+   -------------------------------------------------------------------------- */
+.cinema-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerAnim 1.6s infinite;
+  border-radius: 0.75rem;
+}
+
+[data-v2-theme="alabaster"] .cinema-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.09) 50%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes shimmerAnim {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* --------------------------------------------------------------------------
+   TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+.cinema-toast-container {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.cinema-toast {
+  pointer-events: auto;
+  background: var(--cq-surface-elevated);
+  border: 1px solid var(--cq-card-border);
+  color: var(--cq-text-main);
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  animation: toastPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastPop {
+  0% { opacity: 0; transform: translateY(-20px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   SURAH FULL VIEW ITEMS
+   -------------------------------------------------------------------------- */
+.cinema-ayah-row {
+  position: relative;
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--cq-border-light);
+  margin-bottom: 1.25rem;
+  transition: all var(--cq-transition-normal);
+}
+
+.cinema-ayah-row:hover {
+  background: var(--cq-surface-elevated);
+  border-color: var(--cq-card-border);
+}
+
+.cinema-ayah-row.active-playing {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: var(--cq-accent-emerald);
+  box-shadow: 0 0 25px var(--cq-accent-emerald-glow);
+}
+
+.cinema-ayah-num-badge {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--cq-surface-elevated);
+  border: 1px solid var(--cq-accent-gold);
+  color: var(--cq-accent-gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+[data-v2-theme="alabaster"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+}
